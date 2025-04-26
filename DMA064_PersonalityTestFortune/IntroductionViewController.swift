@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class IntoductionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
