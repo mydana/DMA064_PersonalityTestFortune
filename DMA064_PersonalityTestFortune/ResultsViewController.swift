@@ -30,7 +30,6 @@ class ResultsViewController: UIViewController {
     
     func calculateFortune () {
         var element = ElementType.earth
-        var elementName = "Earth"
         var score:Float = self.totalScore.earth!
         if score < self.totalScore.air! {
             element = ElementType.air
