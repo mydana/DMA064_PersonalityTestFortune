@@ -201,6 +201,8 @@ class QuestionViewController: UIViewController {
         rangedStackView.isHidden = false
         rangedLabel0.text = answers[0].text
         rangedLabel0Alt.text = answers[0].alt!
+        rangedSlider0.setValue(0.5, animated: false)
+        rangedSlider1.setValue(0.5, animated: false)
         if answers.count > 1 {
             rangedLabelStack1.isHidden = false
             rangedLabel1.text = answers[1].text

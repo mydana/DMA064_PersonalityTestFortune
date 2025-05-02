@@ -479,9 +479,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Bbm-nx-zT2" firstAttribute="leading" secondItem="tnf-xY-55b" secondAttribute="leading" id="SHN-lR-QQG"/>
                                     <constraint firstItem="rUD-tb-aqF" firstAttribute="leading" secondItem="tnf-xY-55b" secondAttribute="leading" id="WKo-kU-6dT"/>
-                                    <constraint firstAttribute="trailing" secondItem="Bbm-nx-zT2" secondAttribute="trailing" id="ePy-Sy-e9u"/>
                                     <constraint firstAttribute="trailing" secondItem="rUD-tb-aqF" secondAttribute="trailing" id="tp9-Tt-Sbc"/>
                                 </constraints>
                             </stackView>
@@ -627,13 +625,13 @@
     </scenes>
     <resources>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
