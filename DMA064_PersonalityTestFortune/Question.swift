@@ -10,8 +10,8 @@ import Foundation
 struct Question {
     var text: String
     var type: ResponseType
-    var weight: Double
-    var width: Double?
+    var weight: Float
+    var width: Float?
     var answers: [Answer]
 }
 
@@ -24,32 +24,31 @@ enum ElementType: Character {
 }
 
 struct AnswerWeights {
-    var earth: Double? // Earth
-    var air: Double? // Air
-    var fire: Double? // Fire
-    var water: Double? // Water
-    init(earth: Double? = nil, air: Double? = nil, fire: Double? = nil, water: Double? = nil) {
+    var earth: Float? // Earth
+    var air: Float? // Air
+    var fire: Float? // Fire
+    var water: Float? // Water
+    init(earth: Float? = nil, air: Float? = nil, fire: Float? = nil, water: Float? = nil) {
         self.earth = earth
         self.air = air
         self.fire = fire
         self.water = water
     }
-    func weighted(weight: Double) -> AnswerWeights {
+    func weightAndSum(weight: Float, sum: AnswerWeights) -> AnswerWeights {
         return AnswerWeights.init(
-            earth: self.earth ?? 0.0 * weight,
-            air: self.air ?? 0.0 * weight,
-            fire: self.fire ?? 0.0 * weight,
-            water: self.water ?? 0.0 * weight,
+            earth: (self.earth ?? 0.0) + (sum.earth ?? 0.0) * weight,
+            air: (self.air ?? 0.0) + (sum.air ?? 0.0) * weight,
+            fire: (self.fire ?? 0.0) + (sum.fire ?? 0.0) * weight,
+            water: (self.water ?? 0.0) + (sum.water ?? 0.0) * weight,
         )
     }
-
-    func rangedAnswer(slider: Double,
-                      width: Double) -> AnswerWeights {
+    func rangedAnswer(slider: Float,
+                      width: Float) -> AnswerWeights {
         return AnswerWeights.init(
-            earth: self.earth != nil ? max(0, (1 - abs(slider - self.earth!) / width)) : 0.0,
-            air: self.air != nil ? max(0, (1 - abs(slider - self.air!) / width)) : 0.0,
-            fire: self.fire != nil ? max(0, (1 - abs(slider - self.fire!) / width)) : 0.0,
-            water: self.water != nil ? max(0, (1 - abs(slider - self.water!) / width)) : 0.0
+            earth: self.earth != nil ? max(0, (1 - abs(slider - self.earth!) / width * 2)) : 0.0,
+            air: self.air != nil ? max(0, (1 - abs(slider - self.air!) / width * 2)) : 0.0,
+            fire: self.fire != nil ? max(0, (1 - abs(slider - self.fire!) / width * 2)) : 0.0,
+            water: self.water != nil ? max(0, (1 - abs(slider - self.water!) / width * 2)) : 0.0
             )
     }
 }
@@ -64,7 +63,7 @@ var questions: [Question] = [
   Question(
     text: "What is your Sun Sign?",
     type: .single,
-    weight: 1.0,
+    weight: 1.7,
     width: nil,
     answers: [
         Answer(
@@ -109,7 +108,7 @@ var questions: [Question] = [
   Question(
     text: "Pick your favorite color:",
     type: .single,
-    weight: 1.0,
+    weight: 3.1,
     width: nil,
     answers: [
       Answer(
@@ -148,7 +147,7 @@ var questions: [Question] = [
   Question(
     text: "Which seasons do you like?",
     type: .multiple,
-    weight: 1.0,
+    weight: 1.2,
     width: nil,
     answers: [
       Answer(
@@ -190,7 +189,7 @@ var questions: [Question] = [
   Question(
     text: "Describe your energy:",
     type: .ranged,
-    weight: 1.0,
+    weight: 4.0,
     width: 0.5,
     answers: [
       Answer(

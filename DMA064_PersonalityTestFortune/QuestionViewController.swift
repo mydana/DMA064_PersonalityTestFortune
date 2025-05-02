@@ -9,10 +9,12 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
-    var questionIndex = 2
+    var questionIndex = 5
     var answersChosen: [Answer] = []
+    var runningScore: AnswerWeights = .init()
     func nextQuestion() {
-        print(answersChosen)
+        print(runningScore)
+        // print(answersChosen)
     }
     
     @IBOutlet var questionLabel: UILabel!
@@ -32,35 +34,39 @@ class QuestionViewController: UIViewController {
     @IBOutlet var singleQuestion10: UIButton!
     @IBOutlet var singleQuestion11: UIButton!
     @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
-        let currentAnswers = questions[questionIndex].answers
+        let currentQuestion = questions[questionIndex]
+        let currentAnswers = currentQuestion.answers
+        var answer:Answer?
         switch sender {
         case singleQuestion00:
-            answersChosen.append(currentAnswers[0])
+            answer = currentAnswers[0]
         case singleQuestion01:
-            answersChosen.append(currentAnswers[1])
+            answer = currentAnswers[1]
         case singleQuestion02:
-            answersChosen.append(currentAnswers[2])
+            answer = currentAnswers[2]
         case singleQuestion03:
-            answersChosen.append(currentAnswers[3])
+            answer = currentAnswers[3]
         case singleQuestion04:
-            answersChosen.append(currentAnswers[4])
+            answer = currentAnswers[4]
         case singleQuestion05:
-            answersChosen.append(currentAnswers[5])
+            answer = currentAnswers[5]
         case singleQuestion06:
-            answersChosen.append(currentAnswers[6])
+            answer = currentAnswers[6]
         case singleQuestion07:
-            answersChosen.append(currentAnswers[7])
+            answer = currentAnswers[7]
         case singleQuestion08:
-            answersChosen.append(currentAnswers[8])
+            answer = currentAnswers[8]
         case singleQuestion09:
-            answersChosen.append(currentAnswers[9])
+            answer = currentAnswers[9]
         case singleQuestion10:
-            answersChosen.append(currentAnswers[10])
+            answer = currentAnswers[10]
         case singleQuestion11:
-            answersChosen.append(currentAnswers[11])
+            answer = currentAnswers[11]
         default:
             break
         }
+        answersChosen.append(answer!)
+        runningScore = runningScore.weightAndSum(weight: currentQuestion.weight, sum: answer!.score)
         nextQuestion()
     }
     
@@ -75,18 +81,23 @@ class QuestionViewController: UIViewController {
     @IBOutlet var multiLabel3: UILabel!
     @IBOutlet var multiSwitch3: UISwitch!
     @IBAction func multipleAnswerButtonPressed(_ sender: Any) {
-        let currentAnswers = questions[questionIndex].answers
+        let currentQuestion = questions[questionIndex]
+        let currentAnswers = currentQuestion.answers
         if multiSwitch0.isOn {
             answersChosen.append(currentAnswers[0])
+            runningScore = runningScore.weightAndSum(weight: currentQuestion.weight, sum: currentAnswers[0].score)
         }
         if multiSwitch1.isOn {
             answersChosen.append(currentAnswers[1])
+            runningScore = runningScore.weightAndSum(weight: currentQuestion.weight, sum: currentAnswers[1].score)
         }
         if multiSwitch2.isOn {
             answersChosen.append(currentAnswers[2])
+            runningScore = runningScore.weightAndSum(weight: currentQuestion.weight, sum: currentAnswers[2].score)
         }
         if multiSwitch3.isOn {
             answersChosen.append(currentAnswers[3])
+            runningScore = runningScore.weightAndSum(weight: currentQuestion.weight, sum: currentAnswers[3].score)
         }
         nextQuestion()
     }
@@ -102,19 +113,12 @@ class QuestionViewController: UIViewController {
     @IBOutlet var rangedSlider1: UISlider!
     @IBAction func rangedAnswerButtonPressed(_ sender: Any) {
         // TODO
-        let currentAnswers = questions[questionIndex].answers
-        for currentAnswer in currentAnswers {
-            let x = currentAnswer.score.rangedAnswer(slider:Double(rangedSlider0.value), width:0.25)
-            print(currentAnswer.score)
-            print(rangedSlider0.value)
-            print(x)
-        }
-        // questionIndex < questions.count
         
-        // let index = Int(round(rangedSlider0.value * Float(currentAnswers.count - 1)))
-
-        // answersChosen.append(currentAnswers[index])
-
+        let currentQuestion = questions[questionIndex]
+        for currentAnswer in currentQuestion.answers {
+            let score = currentAnswer.score.rangedAnswer(slider:rangedSlider0.value, width:currentQuestion.width!)
+            runningScore = runningScore.weightAndSum(weight: currentQuestion.weight, sum: score)
+        }
         nextQuestion()
     }
     
