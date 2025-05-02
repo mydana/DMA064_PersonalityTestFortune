@@ -11,6 +11,7 @@ struct Question {
     var text: String
     var type: ResponseType
     var weight: Double
+    var width: Double?
     var answers: [Answer]
 }
 
@@ -27,6 +28,30 @@ struct AnswerWeights {
     var air: Double? // Air
     var fire: Double? // Fire
     var water: Double? // Water
+    init(earth: Double? = nil, air: Double? = nil, fire: Double? = nil, water: Double? = nil) {
+        self.earth = earth
+        self.air = air
+        self.fire = fire
+        self.water = water
+    }
+    func weighted(weight: Double) -> AnswerWeights {
+        return AnswerWeights.init(
+            earth: self.earth ?? 0.0 * weight,
+            air: self.air ?? 0.0 * weight,
+            fire: self.fire ?? 0.0 * weight,
+            water: self.water ?? 0.0 * weight,
+        )
+    }
+
+    func rangedAnswer(slider: Double,
+                      width: Double) -> AnswerWeights {
+        return AnswerWeights.init(
+            earth: self.earth != nil ? max(0, (1 - abs(slider - self.earth!) / width)) : 0.0,
+            air: self.air != nil ? max(0, (1 - abs(slider - self.air!) / width)) : 0.0,
+            fire: self.fire != nil ? max(0, (1 - abs(slider - self.fire!) / width)) : 0.0,
+            water: self.water != nil ? max(0, (1 - abs(slider - self.water!) / width)) : 0.0
+            )
+    }
 }
 
 struct Answer {
@@ -40,6 +65,7 @@ var questions: [Question] = [
     text: "What is your Sun Sign?",
     type: .single,
     weight: 1.0,
+    width: nil,
     answers: [
         Answer(
             text: "Ares ♈︎  March 21–April 20",
@@ -84,6 +110,7 @@ var questions: [Question] = [
     text: "Pick your favorite color:",
     type: .single,
     weight: 1.0,
+    width: nil,
     answers: [
       Answer(
         text: "Blue",
@@ -111,6 +138,7 @@ var questions: [Question] = [
     text: "When you sit up in bed, which direction do you face?",
     type: .ranged,
     weight: 2.0,
+    width: 1.0,
     answers: [
         Answer(text: "East", alt: "West", score: AnswerWeights(air: 0.0, water: 1.0)),
         Answer(text: "North", alt: "South", score: AnswerWeights(earth: 0.0, fire: 1.0)),
@@ -121,6 +149,7 @@ var questions: [Question] = [
     text: "Which seasons do you like?",
     type: .multiple,
     weight: 1.0,
+    width: nil,
     answers: [
       Answer(
         text: "Summer",
@@ -141,6 +170,7 @@ var questions: [Question] = [
     text: "What times of the day do you like?",
     type: .multiple,
     weight: 1.0,
+    width: nil,
     answers: [
       Answer(
         text: "Dawn",
@@ -161,6 +191,7 @@ var questions: [Question] = [
     text: "Describe your energy:",
     type: .ranged,
     weight: 1.0,
+    width: 0.5,
     answers: [
       Answer(
         text: "Feminine", alt: "Masculine",

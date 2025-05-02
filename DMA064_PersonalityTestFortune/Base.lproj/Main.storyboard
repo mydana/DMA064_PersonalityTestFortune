@@ -223,6 +223,9 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Submit Answer">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="multipleAnswerButtonPressed:" destination="jKA-nC-r4R" eventType="touchUpInside" id="FvB-Dj-QBh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -241,6 +244,9 @@
                                                     <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="singleAnswerButtonPressed:" destination="jKA-nC-r4R" eventType="touchUpInside" id="gTa-E7-KcY"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="PZ9-GJ-H0G">
                                                 <rect key="frame" x="0.0" y="41.333333333333329" width="48.333333333333336" height="37.333333333333329"/>
@@ -251,6 +257,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="singleAnswerButtonPressed:" destination="jKA-nC-r4R" eventType="touchUpInside" id="Njh-BR-Gaq"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ulm-OQ-XNI">
                                                 <rect key="frame" x="0.0" y="82.666666666666671" width="48.333333333333336" height="37.333333333333329"/>
@@ -261,6 +270,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="singleAnswerButtonPressed:" destination="jKA-nC-r4R" eventType="touchUpInside" id="Zab-jG-YjU"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ief-ka-zdo">
                                                 <rect key="frame" x="0.0" y="123.99999999999999" width="48.333333333333336" height="37.333333333333329"/>
@@ -271,6 +283,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="singleAnswerButtonPressed:" destination="jKA-nC-r4R" eventType="touchUpInside" id="5Km-7R-wrB"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Zh2-Nu-1Hr">
                                                 <rect key="frame" x="0.0" y="165.33333333333334" width="48.333333333333336" height="37.333333333333343"/>
@@ -281,6 +296,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="singleAnswerButtonPressed:" destination="jKA-nC-r4R" eventType="touchUpInside" id="peU-bX-5mg"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="gfR-xW-kTa">
                                                 <rect key="frame" x="0.0" y="206.66666666666666" width="48.333333333333336" height="37.333333333333343"/>
@@ -291,6 +309,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="singleAnswerButtonPressed:" destination="jKA-nC-r4R" eventType="touchUpInside" id="aTv-39-gee"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="GR6-TK-ueA">
                                                 <rect key="frame" x="0.0" y="248.00000000000003" width="48.333333333333336" height="37.333333333333343"/>
@@ -301,6 +322,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="singleAnswerButtonPressed:" destination="jKA-nC-r4R" eventType="touchUpInside" id="Rk7-W4-nVo"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="OXY-Jv-4o7">
                                                 <rect key="frame" x="0.0" y="289.33333333333331" width="48.333333333333336" height="37.333333333333314"/>
@@ -311,6 +335,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="singleAnswerButtonPressed:" destination="jKA-nC-r4R" eventType="touchUpInside" id="OUv-av-rn1"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="qho-h1-VRS">
                                                 <rect key="frame" x="0.0" y="330.66666666666669" width="48.333333333333336" height="37.333333333333314"/>
@@ -321,6 +348,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="singleAnswerButtonPressed:" destination="jKA-nC-r4R" eventType="touchUpInside" id="nhs-wy-KmR"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="H6g-Lb-1l0">
                                                 <rect key="frame" x="0.0" y="372" width="48.333333333333336" height="37.333333333333314"/>
@@ -331,6 +361,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="singleAnswerButtonPressed:" destination="jKA-nC-r4R" eventType="touchUpInside" id="ppk-8p-8kB"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="lwj-DB-QLd">
                                                 <rect key="frame" x="0.0" y="413.33333333333331" width="48.333333333333336" height="37.333333333333314"/>
@@ -341,6 +374,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="singleAnswerButtonPressed:" destination="jKA-nC-r4R" eventType="touchUpInside" id="AoU-98-DF4"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="jww-Hk-Qay">
                                                 <rect key="frame" x="0.0" y="454.66666666666669" width="48.333333333333336" height="37.333333333333314"/>
@@ -351,6 +387,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="singleAnswerButtonPressed:" destination="jKA-nC-r4R" eventType="touchUpInside" id="UUz-kP-KE3"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -434,6 +473,9 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Submit Answer">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="rangedAnswerButtonPressed:" destination="jKA-nC-r4R" eventType="touchUpInside" id="fwk-He-Jw0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -470,6 +512,10 @@
                         <outlet property="multiLabel1" destination="QRR-Tk-C2v" id="ZyO-vP-YKT"/>
                         <outlet property="multiLabel2" destination="nAi-ge-Glm" id="opx-CM-VLr"/>
                         <outlet property="multiLabel3" destination="7He-0g-DLa" id="gZM-Nx-V4E"/>
+                        <outlet property="multiSwitch0" destination="Hr7-Fb-Qic" id="06G-Pn-4fx"/>
+                        <outlet property="multiSwitch1" destination="buD-p7-tIW" id="OQZ-3U-rDH"/>
+                        <outlet property="multiSwitch2" destination="yJd-dv-ZdJ" id="yLy-XM-6u2"/>
+                        <outlet property="multiSwitch3" destination="eso-iX-Dpu" id="ASy-TV-J7a"/>
                         <outlet property="multipleStackView" destination="K4g-aF-R0D" id="obd-ze-erL"/>
                         <outlet property="questionLabel" destination="4yt-dR-AO8" id="bT5-1N-TWa"/>
                         <outlet property="questionProgressView" destination="fK1-fa-Aua" id="KWW-g5-iWa"/>
@@ -478,6 +524,8 @@
                         <outlet property="rangedLabel1" destination="hz0-kM-NMK" id="cX9-fe-bBh"/>
                         <outlet property="rangedLabel1Alt" destination="clT-qO-IWm" id="dGa-xt-x9g"/>
                         <outlet property="rangedLabelStack1" destination="Bbm-nx-zT2" id="2BM-lW-zPm"/>
+                        <outlet property="rangedSlider0" destination="1ds-Pv-8wM" id="15H-vu-bET"/>
+                        <outlet property="rangedSlider1" destination="4c4-61-dhJ" id="UvJ-FE-AVa"/>
                         <outlet property="rangedStackView" destination="tnf-xY-55b" id="ysX-fr-G8o"/>
                         <outlet property="singleQuestion00" destination="I59-Aj-pGm" id="y9w-Nk-LpT"/>
                         <outlet property="singleQuestion01" destination="PZ9-GJ-H0G" id="pbc-o4-OBr"/>

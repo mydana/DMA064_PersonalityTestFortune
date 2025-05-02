@@ -9,9 +9,14 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
-    var questionIndex = 0
+    var questionIndex = 2
+    var answersChosen: [Answer] = []
+    func nextQuestion() {
+        print(answersChosen)
+    }
     
     @IBOutlet var questionLabel: UILabel!
+    
     
     @IBOutlet var singleStackView: UIStackView!
     @IBOutlet var singleQuestion00: UIButton!
@@ -26,20 +31,93 @@ class QuestionViewController: UIViewController {
     @IBOutlet var singleQuestion09: UIButton!
     @IBOutlet var singleQuestion10: UIButton!
     @IBOutlet var singleQuestion11: UIButton!
+    @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
+        let currentAnswers = questions[questionIndex].answers
+        switch sender {
+        case singleQuestion00:
+            answersChosen.append(currentAnswers[0])
+        case singleQuestion01:
+            answersChosen.append(currentAnswers[1])
+        case singleQuestion02:
+            answersChosen.append(currentAnswers[2])
+        case singleQuestion03:
+            answersChosen.append(currentAnswers[3])
+        case singleQuestion04:
+            answersChosen.append(currentAnswers[4])
+        case singleQuestion05:
+            answersChosen.append(currentAnswers[5])
+        case singleQuestion06:
+            answersChosen.append(currentAnswers[6])
+        case singleQuestion07:
+            answersChosen.append(currentAnswers[7])
+        case singleQuestion08:
+            answersChosen.append(currentAnswers[8])
+        case singleQuestion09:
+            answersChosen.append(currentAnswers[9])
+        case singleQuestion10:
+            answersChosen.append(currentAnswers[10])
+        case singleQuestion11:
+            answersChosen.append(currentAnswers[11])
+        default:
+            break
+        }
+        nextQuestion()
+    }
+    
     
     @IBOutlet var multipleStackView: UIStackView!
     @IBOutlet var multiLabel0: UILabel!
+    @IBOutlet var multiSwitch0: UISwitch!
     @IBOutlet var multiLabel1: UILabel!
+    @IBOutlet var multiSwitch1: UISwitch!
     @IBOutlet var multiLabel2: UILabel!
+    @IBOutlet var multiSwitch2: UISwitch!
     @IBOutlet var multiLabel3: UILabel!
+    @IBOutlet var multiSwitch3: UISwitch!
+    @IBAction func multipleAnswerButtonPressed(_ sender: Any) {
+        let currentAnswers = questions[questionIndex].answers
+        if multiSwitch0.isOn {
+            answersChosen.append(currentAnswers[0])
+        }
+        if multiSwitch1.isOn {
+            answersChosen.append(currentAnswers[1])
+        }
+        if multiSwitch2.isOn {
+            answersChosen.append(currentAnswers[2])
+        }
+        if multiSwitch3.isOn {
+            answersChosen.append(currentAnswers[3])
+        }
+        nextQuestion()
+    }
     
     
     @IBOutlet var rangedStackView: UIStackView!
     @IBOutlet var rangedLabel0: UILabel!
     @IBOutlet var rangedLabel0Alt: UILabel!
+    @IBOutlet var rangedSlider0: UISlider!
     @IBOutlet var rangedLabelStack1: UIStackView!
     @IBOutlet var rangedLabel1: UILabel!
     @IBOutlet var rangedLabel1Alt: UILabel!
+    @IBOutlet var rangedSlider1: UISlider!
+    @IBAction func rangedAnswerButtonPressed(_ sender: Any) {
+        // TODO
+        let currentAnswers = questions[questionIndex].answers
+        for currentAnswer in currentAnswers {
+            let x = currentAnswer.score.rangedAnswer(slider:Double(rangedSlider0.value), width:0.25)
+            print(currentAnswer.score)
+            print(rangedSlider0.value)
+            print(x)
+        }
+        // questionIndex < questions.count
+        
+        // let index = Int(round(rangedSlider0.value * Float(currentAnswers.count - 1)))
+
+        // answersChosen.append(currentAnswers[index])
+
+        nextQuestion()
+    }
+    
     
     @IBOutlet var questionProgressView: UIProgressView!
     
@@ -105,6 +183,10 @@ class QuestionViewController: UIViewController {
     
     func updateMultipleStack(using answers: [Answer]) {
         multipleStackView.isHidden = false
+        multiSwitch0.isOn = false
+        multiSwitch1.isOn = false
+        multiSwitch2.isOn = false
+        multiSwitch3.isOn = false
         multiLabel0.text = answers[0].text
         multiLabel1.text = answers[1].text
         multiLabel2.text = answers[2].text
@@ -133,5 +215,4 @@ class QuestionViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
