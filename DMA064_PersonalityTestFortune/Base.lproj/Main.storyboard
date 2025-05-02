@@ -540,7 +540,7 @@
                         <outlet property="singleQuestion10" destination="lwj-DB-QLd" id="LTi-RF-ssD"/>
                         <outlet property="singleQuestion11" destination="jww-Hk-Qay" id="vvK-Ce-tiO"/>
                         <outlet property="singleStackView" destination="8pR-De-zHI" id="UAh-LB-aRR"/>
-                        <segue destination="zm8-YG-hfL" kind="show" identifier="Results" id="mAu-wp-JpV"/>
+                        <segue destination="zm8-YG-hfL" kind="show" identifier="Results" destinationCreationSelector="showResults:" id="mAu-wp-JpV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Bt-PP-m6k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -572,26 +572,38 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Pf1-vi-tJM" firstAttribute="centerY" secondItem="bIO-a7-Eko" secondAttribute="centerY" id="z99-A4-nI4"/>
+                                    <constraint firstItem="iwj-oB-q1P" firstAttribute="leading" secondItem="bIO-a7-Eko" secondAttribute="leading" id="87R-rC-HJh"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pf1-vi-tJM" secondAttribute="trailing" id="8EH-Pf-Wcb"/>
+                                    <constraint firstAttribute="trailing" secondItem="iwj-oB-q1P" secondAttribute="trailing" id="TBp-i4-Whm"/>
+                                    <constraint firstItem="Pf1-vi-tJM" firstAttribute="leading" secondItem="bIO-a7-Eko" secondAttribute="leading" id="yyQ-5p-iiT"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TOg-LM-Tse"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                         <constraints>
-                            <constraint firstItem="bIO-a7-Eko" firstAttribute="centerX" secondItem="uas-zy-hgL" secondAttribute="centerX" id="38r-l8-79Y"/>
-                            <constraint firstItem="bIO-a7-Eko" firstAttribute="leading" secondItem="TOg-LM-Tse" secondAttribute="leading" constant="20" id="DoO-Fq-l3Q"/>
-                            <constraint firstItem="TOg-LM-Tse" firstAttribute="trailing" secondItem="bIO-a7-Eko" secondAttribute="trailing" constant="20" id="lt2-q7-DAZ"/>
-                            <constraint firstItem="bIO-a7-Eko" firstAttribute="centerY" secondItem="uas-zy-hgL" secondAttribute="centerY" id="oHv-OK-dJw"/>
+                            <constraint firstItem="TOg-LM-Tse" firstAttribute="trailing" secondItem="bIO-a7-Eko" secondAttribute="trailing" constant="20" id="H8E-6b-Zkc"/>
+                            <constraint firstItem="bIO-a7-Eko" firstAttribute="leading" secondItem="TOg-LM-Tse" secondAttribute="leading" constant="20" id="Iw1-GM-PBX"/>
+                            <constraint firstItem="bIO-a7-Eko" firstAttribute="centerY" secondItem="uas-zy-hgL" secondAttribute="centerY" id="QV7-Wk-sjI"/>
+                            <constraint firstItem="bIO-a7-Eko" firstAttribute="centerX" secondItem="uas-zy-hgL" secondAttribute="centerX" id="zFD-8I-Klo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Results" id="IUV-BE-fqD">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="QrG-MB-JFX"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="QrG-MB-JFX">
+                            <connections>
+                                <segue destination="2p9-cD-MYO" kind="unwind" unwindAction="unwindToQuizIntroductionWithSegue:" id="isV-AO-1Hl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="resultAnswerLabel" destination="iwj-oB-q1P" id="B8j-Te-XIl"/>
+                        <outlet property="resultDefinitionLabel" destination="Pf1-vi-tJM" id="IpT-Aq-K64"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hbg-B9-JEK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="2p9-cD-MYO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2428" y="4"/>
+            <point key="canvasLocation" x="2426.7175572519081" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KqM-dA-1q5">
@@ -615,13 +627,13 @@
     </scenes>
     <resources>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

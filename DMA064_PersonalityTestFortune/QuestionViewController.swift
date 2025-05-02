@@ -9,16 +9,11 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
-    var questionIndex = 5
+    var questionIndex = 0
     var answersChosen: [Answer] = []
     var runningScore: AnswerWeights = .init()
-    func nextQuestion() {
-        print(runningScore)
-        // print(answersChosen)
-    }
     
     @IBOutlet var questionLabel: UILabel!
-    
     
     @IBOutlet var singleStackView: UIStackView!
     @IBOutlet var singleQuestion00: UIButton!
@@ -126,6 +121,11 @@ class QuestionViewController: UIViewController {
     @IBOutlet var questionProgressView: UIProgressView!
     
     
+    @IBSegueAction func showResults(_ coder: NSCoder) -> ResultsViewController? {
+        return ResultsViewController(coder: coder, totalScore: runningScore)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
@@ -207,6 +207,15 @@ class QuestionViewController: UIViewController {
             rangedLabel1Alt.text = answers[1].alt!
         } else {
             rangedLabelStack1.isHidden = true
+        }
+    }
+    
+    func nextQuestion() {
+        questionIndex += 1
+        if questionIndex < questions.count {
+            updateUI()
+        } else {
+            performSegue(withIdentifier: "Results", sender: nil)
         }
     }
     

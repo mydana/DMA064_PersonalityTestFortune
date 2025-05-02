@@ -21,6 +21,34 @@ enum ResponseType {
 
 enum ElementType: Character {
     case earth = "🪨", air = "🌬️", fire = "🔥", water = "🌊"
+    var definition: String {
+        switch self {
+        case .earth:
+            return "Your primary element is Earth. Tou are most comfortable in your home. "
+            + "When you need to recharge return to your nest, and practice a grounding ritual. "
+            + "If you do that, the Earth's energy will bring you comfort and rejuvenation. "
+            + "However, be sure to venture away from your home from time to time "
+            + "whenever it's time to receive new wisdom and insight."
+        case .air:
+            return "Your primary element is Air. "
+            + "Like the winds you can be variable, following where your energies call you to go. "
+            + "Each waning Moon, do deep soul search to divine which direction you are called to go, "
+            + "to ensure that your boundless energy is utilized towards your best intentions."
+        case .fire:
+            return "Your primary element is Fire. Passion describes you. Passion drives you. "
+            + "And if you're not careful, passion can burn you. "
+            + "Your friends and family appreciate your passionate nature, "
+            + "and enjoy that you are generous with your energy. "
+            + "Be aware, however, of psychic vampires, "
+            + "they will try to steal your passion and energy to their own purposes."
+        case .water:
+            return "Your primary element is Water. Like a river your flexibility is your greatest gift. "
+            + "Also like a river powering a water wheel, when times are good, "
+            + "you can utilize unlimited energy. But, when times are bad, "
+            + "you still have the persistence necessary to wear down any rocks that get in your way. "
+            + "Be aware of any thoughts that can dam up your energy flow."
+        }
+    }
 }
 
 struct AnswerWeights {
