@@ -24,7 +24,7 @@ enum ElementType: Character {
     var definition: String {
         switch self {
         case .earth:
-            return "Your primary element is Earth. Tou are most comfortable in your home. "
+            return "Your primary element is Earth. You are most comfortable in your home. "
             + "When you need to recharge return to your nest, and practice a grounding ritual. "
             + "If you do that, the Earth's energy will bring you comfort and rejuvenation. "
             + "However, be sure to venture away from your home from time to time "
@@ -32,7 +32,7 @@ enum ElementType: Character {
         case .air:
             return "Your primary element is Air. "
             + "Like the winds you can be variable, following where your energies call you to go. "
-            + "Each waning Moon, do deep soul search to divine which direction you are called to go, "
+            + "Each waning Moon, do a deep soul search to divine which direction you are called to go, "
             + "to ensure that your boundless energy is utilized towards your best intentions."
         case .fire:
             return "Your primary element is Fire. Passion describes you. Passion drives you. "
